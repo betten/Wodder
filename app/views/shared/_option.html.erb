@@ -1,0 +1,14 @@
+<div id="options">
+	<% if @user %>
+	<span class="option button left">
+		<span><%= @user.email %></span><a class="signout" href="/users/signout">not you?</a>
+	</span>
+	<span class="option button right">
+		<a href="/wods">Saved WODs &raquo;</a>
+	</span>
+	<% else %>
+	<span class="option button right">
+		<a href="/users/signin">signin &raquo;</a>
+	</span>
+	<% end %>
+</div>

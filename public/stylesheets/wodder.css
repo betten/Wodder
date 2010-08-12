@@ -1,0 +1,342 @@
+body, input {
+	font-family:Arial, Verdana, sans-serif;
+}
+a {
+	color:#000;
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:underline;
+}
+#header {
+	background:#000000;
+	color:#FFFFFF;
+	min-width:850px;
+	padding:16px 12px;
+	*padding:0px;
+	overflow:auto;
+	*width:100%;
+}
+#header-social-icons {
+	padding-top:6px;	
+}
+#header-social-icons .icon {
+	height:20px;
+	width:20px;
+}
+#title {
+	font-size:56px;
+	font-weight:bold;
+	float:left;
+	*padding:16px 12px;
+}
+#title a {
+	color:white;
+}
+#title a:hover {
+	text-decoration:none;
+}
+#description {
+	font-size:16px;
+	font-weight:bold;
+	float:right;
+	*padding:16px 12px;
+	text-align:right;
+}
+#page-wrapper {
+	background:url(/images/background.gif) no-repeat;
+}
+/*
+#sidenav {
+	background:#FFF;
+	display:none;
+	position:fixed;
+	*position:absolute;
+	right:0px;
+	*right: auto;
+	*left: expression( ( 0 - sidenav.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' );
+	top:100px;
+	*top: expression( ( 100 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' );
+	text-align:center;
+	width:200px;
+}
+*/
+#content-wrapper {
+	background:none;
+	margin:20px auto;
+	overflow:auto;
+	width:850px;
+}
+#right-nav-wrapper {
+	float:right;
+	padding-left:25px;
+	width:215px;
+}
+#right-nav {
+	border-left:1px solid #ccc;
+	margin-top:30px;
+	padding:10px 0px 10px 14px;
+}
+#right-nav .box {
+	border-bottom:1px solid #000;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+#right-nav .box .box-title {
+	font-size:12px;
+	font-weight:bold;
+	padding-bottom:6px;
+	text-align:center;
+	text-transform:uppercase;
+}
+#right-nav-info {
+	font-size:12px;
+	padding-bottom:20px;
+	text-align:center;
+}
+#right-nav-info .donate-form {
+	margin-top:12px;
+	text-align:center;
+}
+#right-nav-info .signout {
+	font-size:11px;
+}
+#right-nav-info .signout:hover {
+	text-decoration:underline;
+}
+#right-nav-social-icons .icon {
+	padding-left:25px;
+	height:150px;
+	width:150px;
+}
+#content {
+	float:left;
+	overflow:hidden;
+	padding-left:10px;
+	width:600px;
+}
+#footer {
+	background:#000000;
+	color:#FFFFFF;
+	padding:30px 0px;
+	position:relative;
+	text-align:center;
+}
+#footer a {
+	color:#FFFFFF;
+}
+#footer-social-icons .icon {
+	height:60px;
+	width:60px;
+}
+.gym {
+	padding-bottom:20px;
+}
+.wod {
+	padding:6px 0px;
+}
+.wod a {
+	color:#000000;
+}
+.more {
+	display:none;
+	padding-top:6px;
+}
+.view-more {
+	cursor:pointer;
+	font-weight:bold;
+}
+.title {
+	background:#000000;
+	font-size:24px;
+	font-weight:bold;
+	padding:4px;
+	overflow:auto;
+	width:100%;
+}
+.title a {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+.link {
+	float:left;
+}
+a.save, a.saved {
+	float:right;
+	font-size:20px;
+	margin-right:6px;
+}
+a.saved {
+	color:#00ff00;
+}
+a.save {	
+	color:#FFF;
+	cursor:pointer;
+	display:none;
+}
+.amazon-banner-ad {
+	margin-left:66px;
+	padding-bottom:20px;
+}
+#signup-dialog {
+	display:none;
+	text-align:center;
+}
+#signup-dialog p {
+	padding-bottom:20px;
+}
+#signup-dialog .signin {
+	font-size:11px;
+}
+
+#signin {
+	padding:40px 0px;
+}
+#signin a.back {
+	color:#000;
+	font-size:11px;
+	text-decoration:none;
+}
+#signin a.back:hover {
+	text-decoration:underline;
+}
+div.page-title {
+	font-size:36px;
+	font-weight:bold;
+	padding:10px 0px;
+}
+#signin-form {
+	padding-top:20px;
+}
+.users-form input[type="text"], .users-form input[type="password"] {
+	font-size:18px;
+	padding:4px;
+	width:300px;
+}
+.users-form .gray {
+	color:#CCCCCC;
+}
+.users-form input[type="submit"] {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background:#000;
+	border:none;
+	color:#fff;
+	cursor:pointer;
+	font-size:14px;
+	font-weight:bold;
+	padding:8px 12px;
+}
+#signin-signup {
+	padding:20px 40px 60px 40px;
+	text-align:center;
+}
+.users-error {
+	border:1px solid #F00;
+	background:#FFDDDD;
+	color:#F00;
+	font-size:18px;
+	font-weight:bold;
+	margin-top:12px;
+	padding:8px;
+}
+
+#signup {
+	padding:60px 0px;
+}
+#signup-thanks { }
+.users-success {
+	border:1px solid #006600;
+	background:#99FF66;
+	color:#006600;
+	font-size:20px;
+	font-weight:bold;
+	margin:10px 0px;
+	padding:8px;
+}
+#signup-alternatives {
+	padding-top:40px;
+	text-align:center;
+}
+#signup-alternatives a {
+	color:#000;
+	font-weight:bold;
+	text-decoration:none;
+}
+#signup-alternatives a:hover {
+	text-decoration:underline;
+}
+#signup-error {
+	margin-bottom:10px;
+}
+#signup-error li {
+	list-style-type:disc;
+	list-style-position:inside;
+}
+#options {
+}
+#options .option {
+	-webkit-border-top-right-radius:5px;
+	-webkit-border-top-left-radius:5px;
+	-moz-border-radius-topright:5px;
+	-moz-border-radius-topleft:5px;
+	border-top-right-radius:5px;
+	border-top-left-radius:5px;
+	background:#000;
+	color:#fff;
+	padding:4px 6px;
+}
+#options .option a {
+	color:#fff;
+	text-decoration:none;
+}
+#options .option .signout {
+	font-size:11px;
+	padding-left:4px;
+}
+#options .signout:hover {
+	text-decoration:underline;
+}
+#options .left {
+	float:left;
+}
+#options .right {
+	float:right;
+}
+#options .button {
+	font-weight:bold;
+}
+
+.saved-wod {
+	border-bottom:2px solid #000;
+	margin-bottom:40px;
+}
+.saved-wod a {
+	color:#000;
+}
+.saved-wod-status {
+	background:#000;
+	color:#fff;
+	font-size:11px;
+	padding:4px;
+}
+.saved-wod-delete {
+	cursor:pointer;
+	float:right;
+}
+.saved-wod-delete:hover {
+	text-decoration:underline;
+}
+#saved-wods-back {
+	color:#000;
+	display:block;
+	font-size:18px;
+	font-weight:bold;
+	margin-bottom:40px;
+	text-decoration:none;
+}
+#saved-wods-nil {
+	padding:60px 40px;
+	font-size:20px;
+}

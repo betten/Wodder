@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="All of today's wods, all in one place." />
+  <meta name="keywords" content="wodder, crossfit wodder, wodder.com, the crossfit wodder, crossfit, crossfit workouts, crossfit wod, crossfit workout, crossfit workout of the day, crossfit workouts of the day, crossfit programs, crossfit wods, workout of the day" />
+  <title>Crossfit Wodder</title>
+  <%= stylesheet_link_tag 'reset' %>
+  <%= stylesheet_link_tag 'wodder' %>
+  <%= stylesheet_link_tag 'custom-theme/jquery-ui-1.8.2.custom' %>
+
+  <%= javascript_include_tag 'jquery-1.4.2.min' %>
+  <%= javascript_include_tag 'jquery-ui-1.8.2.custom.min' %>
+
+  <script type="text/javascript">
+	$(document).ready(function() {
+		$(window).resize(function() {
+			// sidenav width x2 to account for content L/R margin
+			if($(this).width() < $('#sidenav').outerWidth()*2 + $('#content').outerWidth()) {
+				$('#sidenav').hide();
+			} else {
+				$('#sidenav').show();
+			}
+		}).resize();
+	});
+  </script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17572110-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</head>
+<body>
+
+<div id="header">
+	<%= render :partial => 'shared/header' %>
+</div>
+
+<div id="page-wrapper">
+	<div id="content-wrapper">
+		<div id="right-nav-wrapper">
+			<div id="right-nav">
+				<%= render :partial => 'shared/right_nav' %>
+			</div>
+		</div>
+		<div id="content">
+			<%= yield  %>
+		</div>
+	</div>
+</div>
+
+<div id="footer">
+	<%= render :partial => 'shared/footer' %>
+</div>
+
+<script type='text/javascript'> var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://'); document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E')); </script> <script type='text/javascript'> try {  var mpmetrics = new MixpanelLib('74973b05e8e5e034bdc7b26ae174fa5a'); } catch(err) { null_fn = function () {}; var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; } </script>
+
+</body>
+</html>
+

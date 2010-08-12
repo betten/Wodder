@@ -1,0 +1,90 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	mpmetrics.track('today\'s wods - view');
+	$('.view-more').click(function() {
+		var more = $(this).parent().find('.more');
+		if(more.is(':visible')) {
+			more.slideUp();
+			$(this).text('[+] more');
+			return;
+		}
+		more.slideDown();
+		$(this).text('[-] less');
+		return;
+	});
+	$('div.gym').hover(
+		function() {
+			$(this).find('.save').show();
+		},
+		function() {
+			$(this).find('.save').hide();
+		}
+	);
+<% if @user %>
+	$('.save').click(function() {
+		var workout = $(this).parents('.gym').find('.wod').clone().remove('.more').html();
+		var gym = $(this).parents('.gym').find('.title .link').text();
+		var save = $(this);
+		$.ajax({
+			type: 'post',
+			url: '/wods/save',
+			data: {
+				workout: workout,
+				gym: gym
+			},
+			success: function() {
+				save.text('saved').removeClass('save').addClass('saved').attr('href','/wods');
+				save.parents('.gym').unbind('mouseenter mouseleave');
+			}
+		});
+	});
+<% else %>
+	$('.save').click(function() {
+		mpmetrics.track('today\'s wods - signup dialog opened');
+		$('#signup-dialog').dialog({
+			draggable: false,
+			modal: true,
+			resizable: false,
+			width: 500
+		});
+	});
+<% end %>
+
+});
+</script>
+
+<%= render :partial => 'shared/option' %>
+
+<% index = 0 %>
+<% every = 3 %>
+<% for gym in @gyms %>
+	<div class="gym">
+		<div class="title">
+			<span class="link">
+				<a href="<%= gym.href %>" target="_blank"><%= gym.title %></a>
+			</span>
+			<% if gym.saved_by_current_user %>
+			<a class="saved" href="/wods">saved</a>
+			<% else %>
+			<a class="save" href="javascript:void(0);">[save]</a>
+			<% end %>			
+</div>
+		<div class="wod">
+			<%= gym.html.to_html %>
+		</div>
+		<div class="view-more">[+] more</div>
+	</div>
+
+<% ########### ADVERTISING ############# %>
+	<% index = index + 1 %>
+	<% if index % every == 0 %>
+	<div class="amazon-banner-ad">
+<iframe src="http://rcm.amazon.com/e/cm?t=crosswodde-20&o=1&p=13&l=st1&mode=sporting&search=crossfit&fc1=000000&lt1=&lc1=3366FF&bg1=FFFFFF&f=ifr" marginwidth="0" marginheight="0" width="468" height="60" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>
+	</div>
+	<% end %>
+<% end %>
+<% ########### END ADVERTISING ############# %>
+
+<% if !@user %>
+	<%= render :partial => 'shared/signup_dialog' %>
+<% end %>

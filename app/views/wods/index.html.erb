@@ -1,0 +1,37 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.saved-wod-delete').click(function() {
+		var wod = $(this).parents('.saved-wod');
+		wod.slideUp();
+		$.ajax({
+			type: 'post',
+			url: '/wods/delete',
+			data: {
+				id: wod.attr('id')
+			}
+		});
+	});
+});
+</script>
+
+<div class="page-title">Saved WODs</div>
+
+<% if @wods.empty? %>
+
+<div id="saved-wods-nil">Hey there <%= @user.email %>, it looks you don't have any WODs saved yet.  Check out <a href="/">today's WODs</a> and see if there are any you like.</div>
+
+<% end %>
+
+<% for wod in @wods %>
+	<div id="<%= wod.id %>" class="saved-wod">
+		<div class="saved-wod-status">
+			<div class="saved-wod-from-time">
+				<span class="saved-wod-delete">[delete]</span>
+				<span>From <strong><%= wod.gym_title %></strong></span> 
+			</div>
+		</div>
+		<div class="saved-wod-workout"><%= wod.workout %></div>
+	</div>
+<% end %>
+
+<a id="saved-wods-back" href="/">&laquo; back to all WODs</a>	

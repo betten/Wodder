@@ -1,0 +1,50 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#user_email').focus(function() {
+		if($(this).val().match(/email/i)) {
+			$(this).val('').removeClass('gray');
+		}
+	});
+	$('#user_email').blur(function() {
+		if($(this).val().length < 1) {
+			$(this).val('email').addClass('gray');
+		}
+	});
+	$('#user_dummy_password').focus(function() {
+		$(this).hide();
+		$('#user_password').show().focus();
+	});
+	$('#user_password').blur(function() {
+		if($(this).val().length < 1) {
+			$(this).hide();
+			$('#user_dummy_password').show();
+		}
+	});
+});
+</script>
+
+<div id="signin">
+
+<div class="page-title">Signin</div>
+
+<% if flash[:error] %>
+	<div class="users-error"><%= flash[:error] %></div>
+<% end %>
+
+<% form_for :user, :html => {:id => 'signin-form', :class => 'users-form'} do |f|%>
+	<%= f.text_field :email, :value => 'email', :class => 'gray' %><br />
+	<input id="user_dummy_password" class="gray" type="text" value="password" />
+	<%= f.password_field :password, :style => 'display:none;' %>
+	<%= submit_tag 'signin' %>
+<% end %>
+<a href="/" class="back">&laquo; back to wods</a>
+
+
+
+</div>
+
+<div id="signin-signup">
+	<div style="font-weight:bold; font-size:18px; padding-bottom:14px;">Don't have an account?</div>
+	<div>Users who donate $5 or more can sign up and gain full access to Crossfit Wodder.  Get started!</div>
+	<%= render :partial => 'shared/donate_form' %>
+</div>

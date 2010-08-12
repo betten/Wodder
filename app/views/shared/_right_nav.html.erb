@@ -1,0 +1,139 @@
+
+<div id="right-nav-info">
+	<% if @user %>
+	<div style="padding-bottom:4px;">Hi <strong><%= @user.email %></strong>! <a class="signout" href="/users/signout">not you?</a></div>
+	<div style="padding-bottom:20px;"><a href="/users/update">[Update account info]</a></div>
+	<% end %>
+	<div style="padding-bottom:20px;">Questions? Comments? Feedback? Want your box added to the list? Email! <a href="mailto:crossfitwodder@gmail.com">crossfitwodder@gmail.com</a></div>
+	<div>Like Wodder? Help us keep it going and growing!</div>
+	<div class="donate-form">
+		<%= render :partial => 'shared/donate_form' %>
+	</div> 
+</div>
+
+<% if current_page?(:controller => 'home', :action => 'index') %>
+
+<div id="right-nav-twitter" class="box" style="border-top:1px solid #000;">
+	<div class="box-title"><a href="http://twitter.com/crossfitwodder" target="_blank">@crossfitwodder</a> on twitter</div>
+
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 5,
+  interval: 6000,
+  width: 'auto',
+  height: 300,
+  theme: {
+    shell: {
+      background: '#ffffff',
+      color: '#000000'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#000000',
+      links: '#000000'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('crossfitwodder').start();
+</script>
+
+</div>
+
+
+
+<div class="box">
+	<div class="box-title">
+		Crossfit Wodder on Facebook
+	</div>
+<iframe src="http://www.facebook.com/plugins/likebox.php?id=117019225013434&amp;width=200&amp;connections=0&amp;stream=true&amp;header=true&amp;height=427" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:427px;" allowTransparency="true"></iframe>
+</div>
+
+
+
+
+
+<div class="box">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-0141749539757471";
+/* 160x600, created 8/2/10, right-nav: top */
+google_ad_slot = "4170687553";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</div>
+
+
+
+
+<div id="right-nav-social-icons" class="box">
+	<div class="box-title">
+		Connect with<br />Crossfit Wodder
+	</div>
+	<a class="icon" href="http://crossfitwodder.blogspot.com/" target="_blank"><img src="/images/blogger-icon.png" height="150" width="150" /></a>
+	<a class="icon" href="http://twitter.com/crossfitwodder" target="_blank"><img src="/images/twitter-icon.png" height="150" width="150" /></a>
+	<a class="icon" href="http://www.facebook.com/pages/Crossfit-Wodder/117019225013434" target="_blank"><img src="/images/facebook-icon.png" height="150" width="150" /></a>
+	<a class="icon" href="http://www.stumbleupon.com/stumbler/crossfitwodder/" target="_blank"><img src="/images/stumbleupon-icon.png" height="150" width="150" /></a>
+	<a class="icon" href="/wods/rss" target="_blank"><img src="/images/rss-icon.png" height="150" width="150" /></a>
+</div>
+
+
+
+
+
+<div class="box">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-0141749539757471";
+/* 160x600, created 8/3/10, right-nav:bottom, text */
+google_ad_slot = "3403330318";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</div>
+
+
+
+
+<div class="box">
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-0141749539757471";
+/* 160x600, created 8/3/10, right-nav:bottom, image */
+google_ad_slot = "3393857019";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</div>
+
+
+<% end %>
+
+
+

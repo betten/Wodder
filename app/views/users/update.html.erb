@@ -1,0 +1,31 @@
+<div id="user-update">
+
+<div class="page-title">Update Account</div>
+
+<% if flash[:error] %>
+	<div class="users-error">
+		<ul>
+		<% for error in flash[:error] %>
+			<li><%= error %></li>
+		<% end %>
+		</ul>
+	</div>
+<% elsif flash[:notice] %>
+	<div class="users-success"><%= flash[:notice] %></div>
+<% end %>
+
+<% form_for :update, :html => {:class => 'users-form'} do |f| %>
+	Email:<br />
+	<%= f.text_field :email, :value => @user.email %><br />
+	Password: <em>(leave password fields empty to keep current password)</em><br />
+	<%= f.password_field :password %><br />
+	Confirm Password:<br />
+	<%= f.password_field :password_confirmation %>
+	<%= submit_tag 'update' %>
+<% end %>
+
+<div>
+	<a href="/"><strong>&laquo; return to wods</strong></a>
+</div>
+
+</div>
